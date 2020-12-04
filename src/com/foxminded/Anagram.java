@@ -1,9 +1,10 @@
 package com.foxminded;
 
 import java.util.Stack;
+import java.util.StringJoiner;
 
-public class DoAnagram {
-    public static String DoAnagramFromWord(String word){
+public class Anagram {
+    public String doAnagramFromWord(String word){
 
         char[] symbols_of_word = word.toCharArray();
         Stack<Character> reverse_letter_word = new Stack<Character>();
@@ -24,12 +25,12 @@ public class DoAnagram {
         return anagram;
     }
 
-    public static String DoAnagramFromText(String text){
-        String reversed_text = "";
+    public StringJoiner doAnagramFromText(String text){
+        StringJoiner reversed_text = new StringJoiner(" ");
         String[] words = text.split("\\s");
         for (int i = 0;i < words.length;++i) {
-            words[i] = DoAnagramFromWord(words[i]);
-            reversed_text = reversed_text + words[i] + " ";
+            words[i] = doAnagramFromWord(words[i]);
+            reversed_text.add(words[i]);
         }
         return reversed_text;
     }
