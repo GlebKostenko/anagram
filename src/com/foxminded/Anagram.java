@@ -6,22 +6,22 @@ import java.util.StringJoiner;
 public class Anagram {
     public String doAnagramFromWord(String word){
 
-        char[] symbols_of_word = word.toCharArray();
-        Stack<Character> reverse_letter_word = new Stack<Character>();
+        char[] symbolsOfWord = word.toCharArray();
+        Stack<Character> reverseLetterWord = new Stack<Character>();
 
         for(int i = 0;i < word.length();++i){
             if(Character.isLetter(word.charAt(i))){
-                reverse_letter_word.add(word.charAt(i));
+                reverseLetterWord.add(word.charAt(i));
             }
         }
 
-        for(int i = 0;i < symbols_of_word.length;++i){
-            if(Character.isLetter(symbols_of_word[i])){
-                symbols_of_word[i] = (Character)reverse_letter_word.pop();
+        for(int i = 0;i < symbolsOfWord.length;++i){
+            if(Character.isLetter(symbolsOfWord[i])){
+                symbolsOfWord[i] = (Character)reverseLetterWord.pop();
             }
         }
 
-        String anagram = new String(symbols_of_word);
+        String anagram = new String(symbolsOfWord);
         return anagram;
     }
 
