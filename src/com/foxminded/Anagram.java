@@ -26,12 +26,11 @@ public class Anagram {
     }
 
     public StringJoiner doAnagramFromText(String text){
-        StringJoiner reversed_text = new StringJoiner(" ");
+        StringJoiner reversedText = new StringJoiner(" ");
         String[] words = text.split("\\s");
         for (int i = 0;i < words.length;++i) {
-            words[i] = doAnagramFromWord(words[i]);
-            reversed_text.add(words[i]);
+            reversedText.add(doAnagramFromWord(words[i]));
         }
-        return reversed_text;
+        return reversedText;
     }
 }
