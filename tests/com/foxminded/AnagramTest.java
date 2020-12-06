@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class AnagramTest {
 
     @Test
-    void doAnagramFromText() {
+    void doAnagramFromTextTest() {
         Anagram anagramTest = new Anagram();
         String  doAnagramFromText_whenOnlyLettersInText_ThenShouldBeSameTextInResult = "!";
         String  doAnagramFromText_whenOneLetterWordInText_ThenShouldBeReversedTextInResult  = "abcd";
