@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AnagramTest {
 
-    Anagram anagramTest = new Anagram();
+    Anagram anagram = new Anagram();
 
     @Test
     void doAnagramFromText_whenOnlyLettersInText_ThenShouldBeSameTextInResult() {
         String text = "!";
-        assertEquals("!",anagramTest
+        assertEquals("!",anagram
                 .doAnagramFromText
                 (text)
                 .toString());
@@ -21,7 +21,7 @@ class AnagramTest {
     @Test
     void doAnagramFromText_whenOneLetterWordInText_ThenShouldBeReversedTextInResult() {
         String text = "abcd";
-        assertEquals("dcba",anagramTest
+        assertEquals("dcba",anagram
                 .doAnagramFromText
                 (text)
                 .toString());
@@ -30,7 +30,7 @@ class AnagramTest {
     @Test
     void doAnagramFromText_whenTwoWordsWithNoLetterSymbolsInText_ThenShouldBeReversedOnlyLetterSymbolsTextInResult() {
         String  text = "a1bcd efg!h";
-        assertEquals( "d1cba hgf!e",anagramTest
+        assertEquals( "d1cba hgf!e",anagram
                 .doAnagramFromText
                 (text)
                 .toString());
