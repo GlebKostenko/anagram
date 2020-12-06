@@ -29,12 +29,7 @@ public class Anagram {
 
     public StringJoiner doAnagramFromText(String text){
         StringJoiner reversedText = new StringJoiner(" ");
-        String[] words = text.split("\\s");
-        Stream<String> stream = Arrays.stream(words);
-        stream.forEach(x ->reversedText.add(doAnagramFromWord(x)));
-//        for (int i = 0;i < words.length;++i) {
-//            reversedText.add(doAnagramFromWord(words[i]));
-//        }
+        Stream.of(text.split("\\s")).forEach(x ->reversedText.add(doAnagramFromWord(x)));
         return reversedText;
     }
 }

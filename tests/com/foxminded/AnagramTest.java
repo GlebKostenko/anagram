@@ -7,23 +7,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AnagramTest {
 
+    Anagram anagramTest = new Anagram();
+
     @Test
-    void doAnagramFromTextTest() {
-        Anagram anagramTest = new Anagram();
-        String  doAnagramFromText_whenOnlyLettersInText_ThenShouldBeSameTextInResult = "!";
-        String  doAnagramFromText_whenOneLetterWordInText_ThenShouldBeReversedTextInResult  = "abcd";
-        String  doAnagramFromText_whenTwoWordsWithNoLetterSymbolsInText_ThenShouldBeReversedOnlyLetterSymbolsTextInResult = "a1bcd efg!h";
+    void doAnagramFromText_whenOnlyLettersInText_ThenShouldBeSameTextInResult() {
+        String text = "!";
         assertEquals("!",anagramTest
                 .doAnagramFromText
-                (doAnagramFromText_whenOnlyLettersInText_ThenShouldBeSameTextInResult)
+                (text)
                 .toString());
+    }
+
+    @Test
+    void doAnagramFromText_whenOneLetterWordInText_ThenShouldBeReversedTextInResult() {
+        String text = "abcd";
         assertEquals("dcba",anagramTest
                 .doAnagramFromText
-                (doAnagramFromText_whenOneLetterWordInText_ThenShouldBeReversedTextInResult)
+                (text)
                 .toString());
+    }
+
+    @Test
+    void doAnagramFromText_whenTwoWordsWithNoLetterSymbolsInText_ThenShouldBeReversedOnlyLetterSymbolsTextInResult() {
+        String  text = "a1bcd efg!h";
         assertEquals( "d1cba hgf!e",anagramTest
                 .doAnagramFromText
-                (doAnagramFromText_whenTwoWordsWithNoLetterSymbolsInText_ThenShouldBeReversedOnlyLetterSymbolsTextInResult)
+                (text)
                 .toString());
     }
 
