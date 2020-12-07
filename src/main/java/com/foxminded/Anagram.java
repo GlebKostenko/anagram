@@ -1,8 +1,6 @@
 package com.foxminded;
 
-import java.util.List;
 import java.util.Stack;
-import java.util.StringJoiner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -29,9 +27,8 @@ public class Anagram {
     }
 
     public String doAnagramFromText(String text){
-        String reversedText = Stream.of(text.split("\\s"))
-                                    .map(x -> doAnagramFromWord(x))
-                                    .collect(Collectors.joining(" "));
-        return reversedText;
+        return Stream.of(text.split("\\s"))
+                .map(x -> doAnagramFromWord(x))
+                .collect(Collectors.joining(" "));
     }
 }
