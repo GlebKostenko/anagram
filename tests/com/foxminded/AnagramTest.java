@@ -13,27 +13,24 @@ class AnagramTest {
     void doAnagramFromText_whenOnlyLettersInText_ThenShouldBeSameTextInResult() {
         String text = "!";
         assertEquals("!",anagram
-                .doAnagramFromText
-                (text)
-                .toString());
+                .doAnagramFromText(text)
+        );
     }
 
     @Test
     void doAnagramFromText_whenOneLetterWordInText_ThenShouldBeReversedTextInResult() {
         String text = "abcd";
         assertEquals("dcba",anagram
-                .doAnagramFromText
-                (text)
-                .toString());
+                .doAnagramFromText(text)
+        );
     }
 
     @Test
     void doAnagramFromText_whenTwoWordsWithNoLetterSymbolsInText_ThenShouldBeReversedOnlyLetterSymbolsTextInResult() {
         String  text = "a1bcd efg!h";
         assertEquals( "d1cba hgf!e",anagram
-                .doAnagramFromText
-                (text)
-                .toString());
+                .doAnagramFromText(text)
+        );
     }
 
 }
